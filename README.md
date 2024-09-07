@@ -25,3 +25,11 @@ cd bedrock
 poetry run python testharness.py
 ```
 
+# alternatively, run the application using docker
+1. Install latest docker and docker-compose
+2. Run the application
+```bash
+docker compose build
+docker compose up bedrock
+```
+
