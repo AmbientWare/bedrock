@@ -7,6 +7,8 @@ services:
       dockerfile: ./docker/Dockerfile
     env_file:
       - .env
+    volumes:
+      - ./docker-volumes:/app/results
     networks:
       - default
     command: ["python", "testharness.py"]

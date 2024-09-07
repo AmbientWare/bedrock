@@ -14,7 +14,10 @@
 .env
 
 # ignore local catalog data
-C:*
+bedrock/results
 
 # ignore bedrock storage directory
 bedrock/lancedb
+
+# ignore linked docker volumes
+docker-volumes

@@ -92,7 +92,7 @@ if __name__ == "__main__":
     openai_api_key: str = os.getenv("OPENAI_API_KEY", "")
 
     data_room_path: str = """./dataroom"""
-    output_dir: str = """C:/code/bedrock/results"""
+    output_dir: str = """./results/code/bedrock/results"""
 
     # make sure output directory exists
     if not os.path.exists(output_dir):

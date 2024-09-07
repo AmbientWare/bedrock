@@ -17,5 +17,8 @@ RUN poetry config virtualenvs.create false \
 # copy all contents of bedrock directory to the working directory
 COPY bedrock /app
 
+# create results directory
+RUN mkdir -p /app/bedrock/results
+
 # set the entrypoint to the testharness.py file
 CMD ["python", "testharness.py"]
