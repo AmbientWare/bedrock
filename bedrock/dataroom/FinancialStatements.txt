@@ -1,0 +1,48 @@
+# Acme Inc. Financial Statements (2021-2023)
+
+## Income Statement (in thousands USD)
+
+| Item                   | 2023     | 2022     | 2021     |
+|------------------------|----------|----------|----------|
+| Revenue                | 150,000  | 120,000  | 95,000   |
+| Cost of Goods Sold     | (90,000) | (75,000) | (61,750) |
+| Gross Profit           | 60,000   | 45,000   | 33,250   |
+| Operating Expenses     | (40,000) | (35,000) | (28,500) |
+| Operating Income       | 20,000   | 10,000   | 4,750    |
+| Interest Expense       | (2,000)  | (1,800)  | (1,500)  |
+| Income Before Taxes    | 18,000   | 8,200    | 3,250    |
+| Income Tax Expense     | (5,400)  | (2,460)  | (975)    |
+| Net Income             | 12,600   | 5,740    | 2,275    |
+
+## Balance Sheet (in thousands USD)
+
+| Item                   | 2023     | 2022     | 2021     |
+|------------------------|----------|----------|----------|
+| Cash and Equivalents   | 25,000   | 18,000   | 12,000   |
+| Accounts Receivable    | 30,000   | 24,000   | 19,000   |
+| Inventory              | 35,000   | 30,000   | 25,000   |
+| Total Current Assets   | 90,000   | 72,000   | 56,000   |
+| Property and Equipment | 80,000   | 70,000   | 65,000   |
+| Total Assets           | 170,000  | 142,000  | 121,000  |
+| Accounts Payable       | 20,000   | 18,000   | 15,000   |
+| Short-term Debt        | 10,000   | 8,000    | 7,000    |
+| Total Current Liab.    | 30,000   | 26,000   | 22,000   |
+| Long-term Debt         | 40,000   | 35,000   | 30,000   |
+| Total Liabilities      | 70,000   | 61,000   | 52,000   |
+| Shareholders' Equity   | 100,000  | 81,000   | 69,000   |
+| Total Liab. and Equity | 170,000  | 142,000  | 121,000  |
+
+## Cash Flow Statement (in thousands USD)
+
+| Item                           | 2023    | 2022    | 2021    |
+|--------------------------------|---------|---------|---------|
+| Net Income                     | 12,600  | 5,740   | 2,275   |
+| Depreciation                   | 8,000   | 7,000   | 6,500   |
+| Changes in Working Capital     | (9,000) | (7,000) | (5,000) |
+| Cash from Operating Activities | 11,600  | 5,740   | 3,775   |
+| Capital Expenditures           | (18,000)| (12,000)| (10,000)|
+| Cash from Investing Activities | (18,000)| (12,000)| (10,000)|
+| Net Borrowings                 | 7,000   | 6,000   | 5,000   |
+| Dividends Paid                 | (1,000) | (740)   | (275)   |
+| Cash from Financing Activities | 6,000   | 5,260   | 4,725   |
+| Net Change in Cash             | (400)   | (1,000) | (1,500) |

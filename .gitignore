@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+*/__pycache__/
+*.py[cod]
+*$py.class
+.venv
+*.pyc
+*audio_data/
+*tmp/
+*TL/
+*test/
+*ignore/
+
+# ignore env files
+.env
+
+# ignore local catalog data
+C:*

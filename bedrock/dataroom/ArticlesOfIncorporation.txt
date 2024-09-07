@@ -1,0 +1,59 @@
+# Acme Inc. Articles of Incorporation
+
+State of Delaware
+Department of State
+Division of Corporations
+
+## Article I: Name
+The name of the corporation is Acme Inc.
+
+## Article II: Registered Agent
+The registered agent and registered office of the corporation in the State of Delaware is:
+
+Delaware Registered Agent LLC
+1234 Corporate Blvd, Suite 100
+Wilmington, DE 19801
+
+## Article III: Purpose
+The purpose of the corporation is to engage in any lawful act or activity for which corporations may be organized under the General Corporation Law of Delaware, with a primary focus on developing, manufacturing, and distributing renewable energy technologies and solutions.
+
+## Article IV: Capital Stock
+The total number of shares of stock that the corporation is authorized to issue is 100,000,000 shares, consisting of:
+- 90,000,000 shares of Common Stock, par value $0.001 per share
+- 10,000,000 shares of Preferred Stock, par value $0.001 per share
+
+The Board of Directors is authorized to establish one or more series of Preferred Stock and to determine the preferences, rights, and privileges of any such series.
+
+## Article V: Board of Directors
+The number of directors constituting the initial Board of Directors is five (5). The names and addresses of the persons who are to serve as directors until the first annual meeting of stockholders or until their successors are elected and qualified are:
+
+1. Jane Doe, 123 Green St, Solarville, CA 90210
+2. John Smith, 456 Wind Ln, Turbinetown, TX 75001
+3. Emily Chen, 789 Battery Ave, Storagecity, NY 10001
+4. Michael Johnson, 321 Grid Rd, Powerburg, IL 60601
+5. Sarah Williams, 654 Eco Blvd, Sustainaville, OR 97201
+
+## Article VI: Incorporator
+The name and mailing address of the incorporator is:
+
+Robert Green
+Acme Inc.
+1000 Renewable Way
+Solarville, CA 90210
+
+## Article VII: Limitation of Director Liability
+To the fullest extent permitted by the General Corporation Law of Delaware, a director of the corporation shall not be personally liable to the corporation or its stockholders for monetary damages for breach of fiduciary duty as a director.
+
+## Article VIII: Indemnification
+The corporation shall indemnify its directors, officers, employees, and agents to the fullest extent permitted by the General Corporation Law of Delaware.
+
+## Article IX: Amendments
+The corporation reserves the right to amend, alter, change, or repeal any provision contained in these Articles of Incorporation in the manner now or hereafter prescribed by statute.
+
+IN WITNESS WHEREOF, I have hereunto set my hand this 15th day of March, 2015.
+
+[Signature]
+Robert Green, Incorporator
+
+Filed: March 20, 2015
+Delaware Secretary of State

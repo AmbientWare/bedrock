@@ -1,0 +1,12 @@
+networks:
+  default:
+
+services:
+  bedrock:
+    build:
+      dockerfile: ./docker/Dockerfile
+    env_file:
+      - .env
+    networks:
+      - default
+    command: ["python", "testharness.py"]

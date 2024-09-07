@@ -1,0 +1,48 @@
+# Acme Inc. Accounts Receivable and Payable Aging Reports
+As of December 31, 2023
+
+## Accounts Receivable Aging Report
+
+| Customer               | Current  | 1-30 Days | 31-60 Days | 61-90 Days | Over 90 Days | Total     |
+|------------------------|----------|-----------|------------|------------|--------------|-----------|
+| SolarCity Corp         | $500,000 | $200,000  | $50,000    | $0         | $0           | $750,000  |
+| WindPower Solutions    | $300,000 | $150,000  | $100,000   | $25,000    | $0           | $575,000  |
+| GreenGrid Technologies | $450,000 | $100,000  | $0         | $0         | $0           | $550,000  |
+| EcoEnergy Systems      | $250,000 | $200,000  | $75,000    | $50,000    | $25,000      | $600,000  |
+| Sustainable Power Inc. | $350,000 | $150,000  | $50,000    | $0         | $0           | $550,000  |
+| Other Customers        | $600,000 | $300,000  | $200,000   | $150,000   | $125,000     | $1,375,000|
+| **Total**              | $2,450,000| $1,100,000| $475,000  | $225,000   | $150,000     | $4,400,000|
+| **Percentage**         | 55.68%   | 25.00%    | 10.80%     | 5.11%      | 3.41%        | 100%      |
+
+### Notes:
+1. Total accounts receivable balance: $4,400,000
+2. 80.68% of receivables are current or less than 30 days past due
+3. Only 3.41% of receivables are over 90 days past due
+4. Major customers (top 5) account for 68.75% of total receivables
+
+## Accounts Payable Aging Report
+
+| Vendor                 | Current  | 1-30 Days | 31-60 Days | 61-90 Days | Over 90 Days | Total     |
+|------------------------|----------|-----------|------------|------------|--------------|-----------|
+| PV Panel Suppliers Ltd | $300,000 | $150,000  | $0         | $0         | $0           | $450,000  |
+| Turbine Tech Co.       | $250,000 | $100,000  | $50,000    | $0         | $0           | $400,000  |
+| Green Materials Inc.   | $200,000 | $75,000   | $25,000    | $0         | $0           | $300,000  |
+| EcoWire Solutions      | $150,000 | $50,000   | $0         | $0         | $0           | $200,000  |
+| Renewable Parts Corp   | $175,000 | $75,000   | $25,000    | $0         | $0           | $275,000  |
+| Other Vendors          | $400,000 | $200,000  | $100,000   | $50,000    | $25,000      | $775,000  |
+| **Total**              | $1,475,000| $650,000 | $200,000   | $50,000    | $25,000      | $2,400,000|
+| **Percentage**         | 61.46%   | 27.08%    | 8.33%      | 2.08%      | 1.04%        | 100%      |
+
+### Notes:
+1. Total accounts payable balance: $2,400,000
+2. 88.54% of payables are current or less than 30 days past due
+3. Only 1.04% of payables are over 90 days past due
+4. Major vendors (top 5) account for 67.71% of total payables
+
+## Summary:
+- Accounts Receivable Turnover Ratio: 4.55 (based on annual credit sales of $20,000,000)
+- Accounts Payable Turnover Ratio: 5.00 (based on annual credit purchases of $12,000,000)
+- Days Sales Outstanding (DSO): 80.30 days
+- Days Payable Outstanding (DPO): 73.00 days
+
+The company maintains a healthy balance between collecting receivables and paying suppliers, with a slight advantage in cash flow management (DSO > DPO by 7.30 days).

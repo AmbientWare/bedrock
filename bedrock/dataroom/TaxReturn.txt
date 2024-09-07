@@ -1,0 +1,55 @@
+# Acme Inc. Tax Return Summary 2023
+
+## Form 1120 - U.S. Corporation Income Tax Return
+
+### Basic Information:
+- Company Name: Acme Inc.
+- EIN: 12-3456789
+- Address: 123 Green Energy Way, Solarville, CA 90210
+- Incorporated: 2015
+- Principal Business Activity: Renewable Energy Engineering Solutions
+
+### Income:
+1. Gross receipts or sales: $150,000,000
+2. Returns and allowances: $0
+3. Gross profit: $60,000,000
+4. Total income: $60,000,000
+
+### Deductions:
+5. Salaries and wages: $30,000,000
+6. Repairs and maintenance: $2,000,000
+7. Bad debts: $500,000
+8. Rents: $1,500,000
+9. Taxes and licenses: $1,000,000
+10. Depreciation: $8,000,000
+11. Advertising: $2,000,000
+12. Employee benefit programs: $3,000,000
+13. Other deductions: $2,000,000
+14. Total deductions: $50,000,000
+
+### Tax Computation:
+15. Taxable income: $10,000,000
+16. Total tax: $2,100,000
+
+### Payments and Refundable Credits:
+17. 2022 overpayment credited to 2023: $100,000
+18. 2023 estimated tax payments: $1,900,000
+19. Total payments and refundable credits: $2,000,000
+
+### Amount Owed or Refund:
+20. Estimated tax penalty: $0
+21. Amount owed: $100,000
+
+## Schedule K - Other Information
+
+- Business activity code number: 237130 (Power and Communication Line and Related Structures Construction)
+- Qualified opportunity zones investment: Yes
+- Foreign ownership: No
+- Did the corporation pay dividends other than stock dividends and distributions in exchange for stock? Yes
+
+## Additional Notes:
+- The corporation made significant investments in new renewable energy technologies, resulting in increased depreciation.
+- The company has ongoing R&D projects related to solar and wind energy solutions, qualifying for R&D tax credits.
+- Acme Inc. has made a qualified opportunity zone investment in a solar farm project.
+
+This tax return summary is consistent with the financial statements provided earlier, showing Acme Inc.'s focus on renewable energy engineering and its strong financial performance in 2023.
