@@ -208,6 +208,17 @@ html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
+name = "cachetools"
+version = "5.5.0"
+description = "Extensible memoizing collections and decorators"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "cachetools-5.5.0-py3-none-any.whl", hash = "sha256:02134e8439cdc2ffb62023ce1debca2944c3f289d66bb17ead3ab3dede74b292"},
+    {file = "cachetools-5.5.0.tar.gz", hash = "sha256:2cc24fb4cbe39633fb7badd9db9ca6295d766d9c2995f245725a46715d050f2a"},
+]
+
+[[package]]
 name = "certifi"
 version = "2024.8.30"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -358,6 +369,17 @@ marshmallow = ">=3.18.0,<4.0.0"
 typing-inspect = ">=0.4.0,<1"
 
 [[package]]
+name = "decorator"
+version = "5.1.1"
+description = "Decorators for Humans"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "decorator-5.1.1-py3-none-any.whl", hash = "sha256:b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"},
+    {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
+]
+
+[[package]]
 name = "deprecated"
 version = "1.2.14"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
@@ -373,6 +395,20 @@ wrapt = ">=1.10,<2"
 
 [package.extras]
 dev = ["PyTest", "PyTest-Cov", "bump2version (<1)", "sphinx (<2)", "tox"]
+
+[[package]]
+name = "deprecation"
+version = "2.1.0"
+description = "A library to handle automated deprecations"
+optional = false
+python-versions = "*"
+files = [
+    {file = "deprecation-2.1.0-py2.py3-none-any.whl", hash = "sha256:a10811591210e1fb0e768a8c25517cabeabcba6f0bf96564f8ff45189f90b14a"},
+    {file = "deprecation-2.1.0.tar.gz", hash = "sha256:72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"},
+]
+
+[package.dependencies]
+packaging = "*"
 
 [[package]]
 name = "dirtyjson"
@@ -742,6 +778,42 @@ files = [
 ]
 
 [[package]]
+name = "lancedb"
+version = "0.12.0"
+description = "lancedb"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "lancedb-0.12.0-cp38-abi3-macosx_10_15_x86_64.whl", hash = "sha256:28df523b1b1d7b3db47ee95baa8dd85b94238e811a1b04de91083b47aa28dcb5"},
+    {file = "lancedb-0.12.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:07a92887e470befe5d89ef960afcd516bb9501796458751885499d31c1e448de"},
+    {file = "lancedb-0.12.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ea79b71f2382a3974447a341e0fbb904b9db70269f32378f4cb45b2b20b90771"},
+    {file = "lancedb-0.12.0-cp38-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:db9d4f37252075ede29e090517eb15025d85edcd56001e788b7b7a22190b2028"},
+    {file = "lancedb-0.12.0-cp38-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:8c52158181b6f63cc24a93c11f4bd038d8932ac8c9d14ef9c6e6aaeefb54fb1f"},
+    {file = "lancedb-0.12.0-cp38-abi3-win_amd64.whl", hash = "sha256:c4e63c3b5b3ce40303ec350ba7000bfb7c7c181b7de59c7950f7c2c4bda0421c"},
+]
+
+[package.dependencies]
+attrs = ">=21.3.0"
+cachetools = "*"
+deprecation = "*"
+overrides = ">=0.7"
+packaging = "*"
+pydantic = ">=1.10"
+pylance = "0.16.0"
+ratelimiter = ">=1.0,<2.0"
+requests = ">=2.31.0"
+retry = ">=0.9.2"
+tqdm = ">=4.27.0"
+
+[package.extras]
+azure = ["adlfs (>=2024.2.0)"]
+clip = ["open-clip", "pillow", "torch"]
+dev = ["pre-commit", "ruff"]
+docs = ["mkdocs", "mkdocs-jupyter", "mkdocs-material", "mkdocstrings[python]"]
+embeddings = ["awscli (>=1.29.57)", "boto3 (>=1.28.57)", "botocore (>=1.31.57)", "cohere", "google-generativeai", "huggingface-hub", "ibm-watsonx-ai (>=1.1.2)", "instructorembedding", "ollama", "open-clip-torch", "openai (>=1.6.1)", "pillow", "sentence-transformers", "torch"]
+tests = ["aiohttp", "boto3", "duckdb", "pandas (>=1.4)", "polars (>=0.19,<=1.3.0)", "pytest", "pytest-asyncio", "pytest-mock", "pytz", "tantivy"]
+
+[[package]]
 name = "llama-cloud"
 version = "0.0.17"
 description = ""
@@ -1017,6 +1089,22 @@ llama-index-core = ">=0.11.0,<0.12.0"
 llama-parse = ">=0.5.0"
 
 [[package]]
+name = "llama-index-vector-stores-lancedb"
+version = "0.2.2"
+description = "llama-index vector_stores lancedb integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_vector_stores_lancedb-0.2.2-py3-none-any.whl", hash = "sha256:3ee9c1cd311e540277ccf13a21548091fef892227f9d508737680d64c6a162a8"},
+    {file = "llama_index_vector_stores_lancedb-0.2.2.tar.gz", hash = "sha256:2cc0f5aa7dfd68a6f2998d443138f0ce5650261452e43b5afdf63dfb65861ca7"},
+]
+
+[package.dependencies]
+lancedb = ">=0.8.0"
+llama-index-core = ">=0.11.0,<0.12.0"
+tantivy = "*"
+
+[[package]]
 name = "llama-parse"
 version = "0.5.2"
 description = "Parse files into RAG-Optimized formats."
@@ -1283,6 +1371,17 @@ typing-extensions = ">=4.11,<5"
 datalib = ["numpy (>=1)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1.0.11)"]
 
 [[package]]
+name = "overrides"
+version = "7.7.0"
+description = "A decorator to automatically detect mismatch when overriding a method."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "overrides-7.7.0-py3-none-any.whl", hash = "sha256:c7ed9d062f78b8e4c1a7b70bd8796b35ead4d9f510227ef9c5dc7626c60d7e49"},
+    {file = "overrides-7.7.0.tar.gz", hash = "sha256:55158fa3d93b98cc75299b1e67078ad9003ca27945c76162c1c0766d6f91820a"},
+]
+
+[[package]]
 name = "packaging"
 version = "24.1"
 description = "Core utilities for Python packages"
@@ -1460,6 +1559,68 @@ typing = ["typing-extensions"]
 xmp = ["defusedxml"]
 
 [[package]]
+name = "py"
+version = "1.11.0"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
+    {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
+]
+
+[[package]]
+name = "pyarrow"
+version = "17.0.0"
+description = "Python library for Apache Arrow"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pyarrow-17.0.0-cp310-cp310-macosx_10_15_x86_64.whl", hash = "sha256:a5c8b238d47e48812ee577ee20c9a2779e6a5904f1708ae240f53ecbee7c9f07"},
+    {file = "pyarrow-17.0.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:db023dc4c6cae1015de9e198d41250688383c3f9af8f565370ab2b4cb5f62655"},
+    {file = "pyarrow-17.0.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:da1e060b3876faa11cee287839f9cc7cdc00649f475714b8680a05fd9071d545"},
+    {file = "pyarrow-17.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:75c06d4624c0ad6674364bb46ef38c3132768139ddec1c56582dbac54f2663e2"},
+    {file = "pyarrow-17.0.0-cp310-cp310-manylinux_2_28_aarch64.whl", hash = "sha256:fa3c246cc58cb5a4a5cb407a18f193354ea47dd0648194e6265bd24177982fe8"},
+    {file = "pyarrow-17.0.0-cp310-cp310-manylinux_2_28_x86_64.whl", hash = "sha256:f7ae2de664e0b158d1607699a16a488de3d008ba99b3a7aa5de1cbc13574d047"},
+    {file = "pyarrow-17.0.0-cp310-cp310-win_amd64.whl", hash = "sha256:5984f416552eea15fd9cee03da53542bf4cddaef5afecefb9aa8d1010c335087"},
+    {file = "pyarrow-17.0.0-cp311-cp311-macosx_10_15_x86_64.whl", hash = "sha256:1c8856e2ef09eb87ecf937104aacfa0708f22dfeb039c363ec99735190ffb977"},
+    {file = "pyarrow-17.0.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:2e19f569567efcbbd42084e87f948778eb371d308e137a0f97afe19bb860ccb3"},
+    {file = "pyarrow-17.0.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6b244dc8e08a23b3e352899a006a26ae7b4d0da7bb636872fa8f5884e70acf15"},
+    {file = "pyarrow-17.0.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0b72e87fe3e1db343995562f7fff8aee354b55ee83d13afba65400c178ab2597"},
+    {file = "pyarrow-17.0.0-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:dc5c31c37409dfbc5d014047817cb4ccd8c1ea25d19576acf1a001fe07f5b420"},
+    {file = "pyarrow-17.0.0-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:e3343cb1e88bc2ea605986d4b94948716edc7a8d14afd4e2c097232f729758b4"},
+    {file = "pyarrow-17.0.0-cp311-cp311-win_amd64.whl", hash = "sha256:a27532c38f3de9eb3e90ecab63dfda948a8ca859a66e3a47f5f42d1e403c4d03"},
+    {file = "pyarrow-17.0.0-cp312-cp312-macosx_10_15_x86_64.whl", hash = "sha256:9b8a823cea605221e61f34859dcc03207e52e409ccf6354634143e23af7c8d22"},
+    {file = "pyarrow-17.0.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:f1e70de6cb5790a50b01d2b686d54aaf73da01266850b05e3af2a1bc89e16053"},
+    {file = "pyarrow-17.0.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0071ce35788c6f9077ff9ecba4858108eebe2ea5a3f7cf2cf55ebc1dbc6ee24a"},
+    {file = "pyarrow-17.0.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:757074882f844411fcca735e39aae74248a1531367a7c80799b4266390ae51cc"},
+    {file = "pyarrow-17.0.0-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:9ba11c4f16976e89146781a83833df7f82077cdab7dc6232c897789343f7891a"},
+    {file = "pyarrow-17.0.0-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:b0c6ac301093b42d34410b187bba560b17c0330f64907bfa4f7f7f2444b0cf9b"},
+    {file = "pyarrow-17.0.0-cp312-cp312-win_amd64.whl", hash = "sha256:392bc9feabc647338e6c89267635e111d71edad5fcffba204425a7c8d13610d7"},
+    {file = "pyarrow-17.0.0-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:af5ff82a04b2171415f1410cff7ebb79861afc5dae50be73ce06d6e870615204"},
+    {file = "pyarrow-17.0.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:edca18eaca89cd6382dfbcff3dd2d87633433043650c07375d095cd3517561d8"},
+    {file = "pyarrow-17.0.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7c7916bff914ac5d4a8fe25b7a25e432ff921e72f6f2b7547d1e325c1ad9d155"},
+    {file = "pyarrow-17.0.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f553ca691b9e94b202ff741bdd40f6ccb70cdd5fbf65c187af132f1317de6145"},
+    {file = "pyarrow-17.0.0-cp38-cp38-manylinux_2_28_aarch64.whl", hash = "sha256:0cdb0e627c86c373205a2f94a510ac4376fdc523f8bb36beab2e7f204416163c"},
+    {file = "pyarrow-17.0.0-cp38-cp38-manylinux_2_28_x86_64.whl", hash = "sha256:d7d192305d9d8bc9082d10f361fc70a73590a4c65cf31c3e6926cd72b76bc35c"},
+    {file = "pyarrow-17.0.0-cp38-cp38-win_amd64.whl", hash = "sha256:02dae06ce212d8b3244dd3e7d12d9c4d3046945a5933d28026598e9dbbda1fca"},
+    {file = "pyarrow-17.0.0-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:13d7a460b412f31e4c0efa1148e1d29bdf18ad1411eb6757d38f8fbdcc8645fb"},
+    {file = "pyarrow-17.0.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:9b564a51fbccfab5a04a80453e5ac6c9954a9c5ef2890d1bcf63741909c3f8df"},
+    {file = "pyarrow-17.0.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:32503827abbc5aadedfa235f5ece8c4f8f8b0a3cf01066bc8d29de7539532687"},
+    {file = "pyarrow-17.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a155acc7f154b9ffcc85497509bcd0d43efb80d6f733b0dc3bb14e281f131c8b"},
+    {file = "pyarrow-17.0.0-cp39-cp39-manylinux_2_28_aarch64.whl", hash = "sha256:dec8d129254d0188a49f8a1fc99e0560dc1b85f60af729f47de4046015f9b0a5"},
+    {file = "pyarrow-17.0.0-cp39-cp39-manylinux_2_28_x86_64.whl", hash = "sha256:a48ddf5c3c6a6c505904545c25a4ae13646ae1f8ba703c4df4a1bfe4f4006bda"},
+    {file = "pyarrow-17.0.0-cp39-cp39-win_amd64.whl", hash = "sha256:42bf93249a083aca230ba7e2786c5f673507fa97bbd9725a1e2754715151a204"},
+    {file = "pyarrow-17.0.0.tar.gz", hash = "sha256:4beca9521ed2c0921c1023e68d097d0299b62c362639ea315572a58f3f50fd28"},
+]
+
+[package.dependencies]
+numpy = ">=1.16.6"
+
+[package.extras]
+test = ["cffi", "hypothesis", "pandas", "pytest", "pytz"]
+
+[[package]]
 name = "pydantic"
 version = "2.9.0"
 description = "Data validation using Python type hints"
@@ -1584,6 +1745,32 @@ files = [
 typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
+name = "pylance"
+version = "0.16.0"
+description = "python wrapper for Lance columnar format"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "pylance-0.16.0-cp39-abi3-macosx_10_15_x86_64.whl", hash = "sha256:ee0c11d15d6e1d5cac6fb5dbcd443db1dc8a581ea0251b1df6f0dcc80175a006"},
+    {file = "pylance-0.16.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:1b0ac2c25aed3f3afdbbb36f45ef076b84f7b2f8fc3edcdfb94c4c485b55b22d"},
+    {file = "pylance-0.16.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d9d2daf0fc1f6006c0f0b955cb976f0f25e7fa3813dc60c09446ac7a05172888"},
+    {file = "pylance-0.16.0-cp39-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:449d961ee5c7eaff76a87bbfeaa77576747448f0a8b8d646db8ba0f6c282eee2"},
+    {file = "pylance-0.16.0-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:85abe3171995a436adbfa205f751cc82ccef3332740626e0217f2b48e6b22d4e"},
+    {file = "pylance-0.16.0-cp39-abi3-win_amd64.whl", hash = "sha256:77d821d8e9bd1bcaefb6a40d5dddf112740cf81b9ab317c9ebc60a7035ae9282"},
+]
+
+[package.dependencies]
+numpy = ">=1.22,<2"
+pyarrow = ">=12"
+
+[package.extras]
+benchmarks = ["pytest-benchmark"]
+dev = ["ruff (==0.4.1)"]
+ray = ["ray[data]"]
+tests = ["boto3", "datasets", "duckdb", "h5py (<3.11)", "ml-dtypes", "pandas", "pillow", "polars[pandas,pyarrow]", "pytest", "tensorflow", "tqdm"]
+torch = ["torch"]
+
+[[package]]
 name = "pypdf"
 version = "4.3.1"
 description = "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
@@ -1703,6 +1890,20 @@ files = [
 ]
 
 [[package]]
+name = "ratelimiter"
+version = "1.2.0.post0"
+description = "Simple python rate limiting object"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ratelimiter-1.2.0.post0-py3-none-any.whl", hash = "sha256:a52be07bc0bb0b3674b4b304550f10c769bbb00fead3072e035904474259809f"},
+    {file = "ratelimiter-1.2.0.post0.tar.gz", hash = "sha256:5c395dcabdbbde2e5178ef3f89b568a3066454a6ddc223b76473dac22f89b4f7"},
+]
+
+[package.extras]
+test = ["pytest (>=3.0)", "pytest-asyncio"]
+
+[[package]]
 name = "regex"
 version = "2024.7.24"
 description = "Alternative regular expression module, to replace re."
@@ -1810,6 +2011,21 @@ urllib3 = ">=1.21.1,<3"
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "retry"
+version = "0.9.2"
+description = "Easy to use retry decorator."
+optional = false
+python-versions = "*"
+files = [
+    {file = "retry-0.9.2-py2.py3-none-any.whl", hash = "sha256:ccddf89761fa2c726ab29391837d4327f819ea14d244c232a1d24c67a2f98606"},
+    {file = "retry-0.9.2.tar.gz", hash = "sha256:f8bfa8b99b69c4506d6f5bd3b0aabf77f98cdb17f3c9fc3f5ca820033336fba4"},
+]
+
+[package.dependencies]
+decorator = ">=3.4.2"
+py = ">=1.4.26,<2.0.0"
 
 [[package]]
 name = "six"
@@ -1941,6 +2157,44 @@ files = [
     {file = "striprtf-0.0.26-py3-none-any.whl", hash = "sha256:8c8f9d32083cdc2e8bfb149455aa1cc5a4e0a035893bedc75db8b73becb3a1bb"},
     {file = "striprtf-0.0.26.tar.gz", hash = "sha256:fdb2bba7ac440072d1c41eab50d8d74ae88f60a8b6575c6e2c7805dc462093aa"},
 ]
+
+[[package]]
+name = "tantivy"
+version = "0.22.0"
+description = ""
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "tantivy-0.22.0-cp310-cp310-macosx_10_7_x86_64.whl", hash = "sha256:732ec74c4dd531253af4c14756b7650527f22c7fab244e83b42d76a0a1437219"},
+    {file = "tantivy-0.22.0-cp310-cp310-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:bf1da07b7e1003af4260b1ef3c3db7cb05db1578606092a6ca7a3cff2a22858a"},
+    {file = "tantivy-0.22.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:689ed52985e914c531eadd8dd2df1b29f0fa684687b6026206dbdc57cf9297b2"},
+    {file = "tantivy-0.22.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e5f2885c8e98d1efcc4836c3e9d327d6ba2bc6b5e2cd8ac9b0356af18f571070"},
+    {file = "tantivy-0.22.0-cp310-none-win_amd64.whl", hash = "sha256:4543cc72f4fec30f50fed5cd503c13d0da7cffda47648c7b72c1759103309e41"},
+    {file = "tantivy-0.22.0-cp311-cp311-macosx_10_7_x86_64.whl", hash = "sha256:ec693abf38f229bc1361b0d34029a8bb9f3ee5bb956a3e745e0c4a66ea815bec"},
+    {file = "tantivy-0.22.0-cp311-cp311-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:e385839badc12b81e38bf0a4d865ee7c3a992fea9f5ce4117adae89369e7d1eb"},
+    {file = "tantivy-0.22.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b6c097d94be1af106676c86c02b185f029484fdbd9a2b9f17cb980e840e7bdad"},
+    {file = "tantivy-0.22.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c47a5cdec306ea8594cb6e7effd4b430932ebfd969f9e8f99e343adf56a79bc9"},
+    {file = "tantivy-0.22.0-cp311-none-win_amd64.whl", hash = "sha256:ba0ca878ed025d79edd9c51cda80b0105be8facbaec180fea64a17b80c74e7db"},
+    {file = "tantivy-0.22.0-cp312-cp312-macosx_10_7_x86_64.whl", hash = "sha256:925682f3acb65c85c2a5a5b131401b9f30c184ea68aa73a8cc7c2ea6115e8ae3"},
+    {file = "tantivy-0.22.0-cp312-cp312-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:d75760e45a329313001354d6ca415ff12d9d812343792ae133da6bfbdc4b04a5"},
+    {file = "tantivy-0.22.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fd909d122b5af457d955552c304f8d5d046aee7024c703c62652ad72af89f3c7"},
+    {file = "tantivy-0.22.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c99266ffb204721eb2bd5b3184aa87860a6cff51b4563f808f78fa22d85a8093"},
+    {file = "tantivy-0.22.0-cp312-none-win_amd64.whl", hash = "sha256:9ed6b813a1e7769444e33979b46b470b2f4c62d983c2560ce9486fb9be1491c9"},
+    {file = "tantivy-0.22.0-cp38-cp38-macosx_10_7_x86_64.whl", hash = "sha256:97eb05f8585f321dbc733b64e7e917d061dc70c572c623730b366c216540d149"},
+    {file = "tantivy-0.22.0-cp38-cp38-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:cc74748b6b886475c12bf47c8814861b79f850fb8a528f37ae0392caae0f6f14"},
+    {file = "tantivy-0.22.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a7059c51c25148e07a20bd73efc8b51c015c220f141f3638489447b99229c8c0"},
+    {file = "tantivy-0.22.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f88d05f55e2c3e581de70c5c7f46e94e5869d1c0fd48c5db33be7e56b6b88c9a"},
+    {file = "tantivy-0.22.0-cp38-none-win_amd64.whl", hash = "sha256:09bf6de2fa08aac1a7133bee3631c1123de05130fd2991ceb101f2abac51b9d2"},
+    {file = "tantivy-0.22.0-cp39-cp39-macosx_10_7_x86_64.whl", hash = "sha256:9de1a7497d377477dc09029c343eb9106c2c5fdb2e399f8dddd624cd9c7622a2"},
+    {file = "tantivy-0.22.0-cp39-cp39-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:e81e47edd0faffb5ad20f52ae75c3a2ed680f836e72bc85c799688d3a2557502"},
+    {file = "tantivy-0.22.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:27333518dbc309299dafe79443ee80eede5526a489323cdb0506b95eb334f985"},
+    {file = "tantivy-0.22.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4c9452d05e42450be53a9a58a9cf13f9ff8d3605c73bdc38a34ce5e167a25d77"},
+    {file = "tantivy-0.22.0-cp39-none-win_amd64.whl", hash = "sha256:51e4ec0d44637562bf23912d18d12850c4b3176c0719e7b019d43b59199a643c"},
+    {file = "tantivy-0.22.0.tar.gz", hash = "sha256:dce07fa2910c94934aa3d96c91087936c24e4a5802d839625d67edc6d1c95e5c"},
+]
+
+[package.extras]
+dev = ["nox"]
 
 [[package]]
 name = "tenacity"
@@ -2270,4 +2524,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "58df8be972e7a7ec235d7a14a167e70d681523af7c98630aae59411385346b66"
+content-hash = "a933d01f34cbfbf76ef41dab79b7cd8621400c6c0ba2fb43d8536e273d3ef640"

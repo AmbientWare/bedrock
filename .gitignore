@@ -17,4 +17,4 @@
 C:*
 
 # ignore bedrock storage directory
-bedrock/storage
+bedrock/lancedb
