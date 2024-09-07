@@ -1,5 +1,6 @@
 import os
-from typing import Dict, List, Union
+import shutil
+from typing import Dict, Union
 from llama_index.core import (
     VectorStoreIndex,
     SimpleDirectoryReader,
@@ -48,7 +49,7 @@ def run_due_diligence(
     query_engine = setup_query_engine(index)
 
     diligence_agents = [
-        agent(query_engine=query_engine) for agent in agents.get("diligence", {})
+        agent(query_engine=query_engine) for agent in agents.get("diligence", {})  # type: ignore
     ]
 
     if not diligence_agents:
@@ -71,13 +72,12 @@ if __name__ == "__main__":
     load_dotenv()
     openai_api_key: str = os.getenv("OPENAI_API_KEY", "")
 
-    data_room_path: str = """C:/code/bedrock/dataroom"""
+    data_room_path: str = """./dataroom"""
     output_dir: str = """C:/code/bedrock/results"""
 
-    # make sure directories exist
-    for dir in [data_room_path, output_dir]:
-        if not os.path.exists(dir):
-            os.makedirs(dir, exist_ok=True)
+    # make sure output directory exists
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
 
     due_diligence_results: Dict[str, Dict[str, str]] = run_due_diligence(
         data_room_path, output_dir
