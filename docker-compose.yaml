@@ -1,14 +1,42 @@
 networks:
-  default:
+  bedrock:
+
+volumes:
+  dataroom:
 
 services:
-  bedrock:
+  api:
+    image: api:latest
     build:
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./docker/api.Dockerfile
     env_file:
-      - .env
+      - ./bedrock/.env
+    environment:
+      - DATAROOM_PATH=/app/dataroom
     volumes:
-      - ./docker-volumes:/app/results
+      - dataroom:/app/dataroom
     networks:
-      - default
-    command: ["python", "testharness.py"]
+      - bedrock
+    ports:
+      - 8000:8000
+    command: "./entrypoint.sh"
+
+  frontend:
+    image: frontend:latest
+    build:
+      dockerfile: ./docker/frontend.Dockerfile
+    env_file:
+      - ./frontend/.env
+    environment:
+      - DATAROOM_PATH=/app/dataroom
+      - API_URL=http://api:8000
+      - PUBLIC_API_URL=http://api:8000
+      - ORIGIN=http://localhost:3000
+      - BODY_SIZE_LIMIT=512000000
+    volumes:
+      - dataroom:/app/dataroom
+    ports:
+      - 3000:3000
+    networks:
+      - bedrock
+    command: "node build"

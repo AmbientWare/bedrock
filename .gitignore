@@ -13,6 +13,10 @@
 # ignore env files
 .env
 
+# ignore files/directories in dataroom
+bedrock/dataroom/*
+!bedrock/dataroom/.gitkeep
+
 # ignore local catalog data
 bedrock/results
 
