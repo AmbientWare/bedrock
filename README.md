@@ -14,6 +14,14 @@ pyenv install 3.12
 cp ./bedrock/.env.example ./bedrock/.env
 cp ./frontend/.env.example ./frontend/.env
 ```
+5. Install supabase client and start supabase locally
+```bash
+# for mac and linux
+brew install supabase/tap/supabase
+supabase login
+supabase start
+supabase migration up
+```
 
 # Install dependencies
 ```bash
@@ -21,6 +29,7 @@ poetry install
 ```
 
 # Run the application
+Both the bedrock and frontend applications need to be running. Run the following commands in separate terminals.
 ```bash
 # for bedrock [expose port 8000]
 cd bedrock

@@ -1,39 +1,37 @@
 import os
-
 from typing import Dict, Union
 from llama_index.core import (
     VectorStoreIndex,
 )
 from llama_index.core.indices.base import BaseIndex
 from llama_index.core.base.base_query_engine import BaseQueryEngine
-import sys
 import concurrent.futures
+from typing import List, Union
 
 # project imports
+from bedrock.agents.customChat import CustomChatEngine
 from bedrock.utils import markdown_to_word, ingest_documents
-from bedrock.agents import agents
-from bedrock.agents.diligence import DueDiligenceAgent
+from bedrock.agents.baseAgent import BaseAgent, Summary
 from bedrock.utils import get_index_from_project
 from llama_index.core.memory import ChatMemoryBuffer
+from llama_index.llms.openai import OpenAI
 
 DATAROOM_PATH = os.getenv("DATAROOM_PATH", "./dataroom")
 
 
 def setup_chat_agent(index: Union[VectorStoreIndex, BaseIndex]):
     memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
+    llm = OpenAI(model="gpt-4o", temperature=0)
 
-    chat_engine = index.as_chat_engine(
-        chat_mode="context",
+    chat_engine = CustomChatEngine.from_defaults(
+        retriever=index.as_retriever(),
         memory=memory,
-        system_prompt=(
-            "You have already helped me with due diligence on a company. Now, you are helping me refine the results. I already provided you with some important context and you have provided some initial thoughts. Now, continue the conversation in a friendly, professional tone."
-        ),
+        llm=llm,
     )
 
     return chat_engine
 
 
-#
 def setup_query_engine(index: Union[VectorStoreIndex, BaseIndex]) -> BaseQueryEngine:
     """
     Setup the query engine for the vector index
@@ -41,7 +39,7 @@ def setup_query_engine(index: Union[VectorStoreIndex, BaseIndex]) -> BaseQueryEn
     return index.as_query_engine(response_mode="tree_summarize", similarity_top_k=5)
 
 
-def run_agent(agent: DueDiligenceAgent, output_dir: str):
+def run_agent(agent: BaseAgent, output_dir: str):
     """
     Run the due diligence agent and write the results to a markdown file
     """
@@ -63,17 +61,21 @@ def get_agent(project_name: str, agent_name: str):
     return query_engine
 
 
-def run_due_diligence(project_name: str, output_dir: str) -> Dict[str, Dict[str, str]]:
+async def run_agents(
+    project_name: str, summaries: List[Summary], output_dir: str
+) -> Dict[str, Dict[str, str]]:
     """
     Run the due diligence agents and write the results to a markdown file
     """
     project_path = os.path.join(DATAROOM_PATH, project_name)
-    index = ingest_documents(project_path)
+    index = await ingest_documents(project_path)
     query_engine = setup_query_engine(index)
 
     diligence_agents = [
-        agent(query_engine=query_engine)
-        for _, agent in agents.get("diligence", {}).items()  # type: ignore
+        BaseAgent(
+            name=summary.name, sections=summary.sections, query_engine=query_engine
+        )
+        for summary in summaries
     ]
 
     if not diligence_agents:
@@ -92,7 +94,9 @@ def run_due_diligence(project_name: str, output_dir: str) -> Dict[str, Dict[str,
     return results
 
 
-def run_testharness(project_name: str, to_docs: bool = False):
+async def run_inference(
+    project_name: str, summaries: List[Summary], to_docs: bool = False
+):
     output_dir: str = f"{DATAROOM_PATH}/{project_name}/results"
 
     # delete content of results directory if it exists
@@ -103,7 +107,7 @@ def run_testharness(project_name: str, to_docs: bool = False):
     else:
         os.makedirs(output_dir, exist_ok=True)
 
-    run_due_diligence(project_name, output_dir)
+    await run_agents(project_name, summaries, output_dir)
 
     # convert all files in results directory to workd documents
     if to_docs:

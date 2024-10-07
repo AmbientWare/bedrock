@@ -3,11 +3,13 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
+		//interface Locals {}
+		interface PageData {
+			flash?: { type: 'success' | 'error'; message: string; variant?: 'toast' | 'modal' },
+		}
 		// interface PageState {}
 		// interface Platform {}
 	}
 }
 
-export {};
+export { }
