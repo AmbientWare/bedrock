@@ -5,9 +5,11 @@ from docx import Document
 from typing import Union
 from llama_index.core import (
     VectorStoreIndex,
-    SimpleDirectoryReader,
     StorageContext,
 )
+import lancedb
+from llama_parse import LlamaParse
+from llama_parse.utils import ResultType
 from llama_index.vector_stores.lancedb import LanceDBVectorStore
 from llama_index.core.indices.base import BaseIndex
 from llama_index.llms.openai import OpenAI
@@ -16,11 +18,18 @@ from llama_index.llms.openai import OpenAI
 VECTOR_STORE_URI = os.getenv("VS_URI", "./lancedb")
 
 
+def drop_project_table(project_name: str):
+    """
+    Delete the index from the data room path
+    """
+    db = lancedb.connect(uri=VECTOR_STORE_URI)
+    db.drop_table(project_name)
+
+
 def get_index_from_project(project_name: str) -> Union[VectorStoreIndex, BaseIndex]:
     """
     Get the index from the data room path
     """
-    print(project_name)
     vector_store = LanceDBVectorStore(
         uri=VECTOR_STORE_URI,
         mode="read",
@@ -31,13 +40,22 @@ def get_index_from_project(project_name: str) -> Union[VectorStoreIndex, BaseInd
 
 
 # Document Ingestion and Vector Index Creation
-def ingest_documents(data_room_path: str) -> Union[VectorStoreIndex, BaseIndex]:
+async def ingest_documents(data_room_path: str) -> Union[VectorStoreIndex, BaseIndex]:
     """
     Ingest documents from a dataroom path and create a vector index
     """
     table_name = os.path.basename(os.path.normpath(data_room_path))
 
-    documents = SimpleDirectoryReader(data_room_path).load_data()
+    parser = LlamaParse(result_type=ResultType.MD)  # return markdown
+
+    file_paths = [
+        os.path.join(data_room_path, path)
+        for path in os.listdir(data_room_path)
+        if os.path.isfile(os.path.join(data_room_path, path))
+    ]
+
+    documents = await parser.aload_data(file_paths)  # type: ignore
+
     llm = OpenAI(temperature=0.1, model="gpt-4o")
 
     ## TODO in the future we will want to look at text hash to determine if the document has changed

@@ -1,57 +1,75 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { fade } from 'svelte/transition';
 	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
+	// import { ModeWatcher } from 'mode-watcher';
 
-	let projectName = '';
+	import User from 'lucide-svelte/icons/user';
 
-	function validateInput() {
-		if (!projectName) {
-			alert('Project name is required');
-			return false;
-		}
-		return true;
+	// components
+	import LoginSignup from '$lib/components/modals/loginSignUp.svelte';
+	// import DarkMode from '$lib/components/darkMode/darkMode.svelte';
+	import { DashboardMainNav, UserNav } from '$lib/components/header';
+	import { Icons } from '$lib/icons';
+
+	let showLoginDialog = $state(false);
+
+	let userLoggedIn = $page.data.sessionInfo?.user !== null;
+
+	function toggleCreate(event: MouseEvent) {
+		event.stopPropagation();
+		showLoginDialog = true;
 	}
 
-	async function handleFileUpload(event: Event) {
-		const input = event.target as HTMLInputElement;
-		const files = input.files;
-		if (!files || files.length === 0) return;
-
-		const formData = new FormData();
-		for (let i = 0; i < files.length; i++) {
-			formData.append('files', files[i]);
-		}
-
-		// add project name to form data
-		formData.append('project', projectName);
-
-		try {
-			const response = await fetch('/files/upload', {
-				method: 'POST',
-				body: formData
-			});
-
-			if (response.ok) {
-				alert('Upload successful');
-			} else {
-				alert('Upload failed');
+	function clickOutside(node: HTMLElement) {
+		const handleClick = (event: MouseEvent) => {
+			if (!node.contains(event.target as Node)) {
+				showLoginDialog = false;
 			}
-		} catch (error) {
-			alert('Error during upload');
-		}
+		};
+
+		document.addEventListener('click', handleClick, true);
+
+		return {
+			destroy() {
+				document.removeEventListener('click', handleClick, true);
+			}
+		};
 	}
 </script>
 
-<input type="file" id="fileInput" multiple on:change={handleFileUpload} style="display: none;" />
+<!-- <ModeWatcher /> -->
 
-<header class="flex items-center justify-end p-4">
-	<div class="flex items-center gap-2">
-		<Input type="text" id="projectName" bind:value={projectName} placeholder="Enter project name" />
-		<Button
-			on:click={() => {
-				const valid = validateInput();
-				valid ? document.getElementById('fileInput')?.click() : alert('Project name is required');
-			}}>Create Project</Button
-		>
+<header
+	class="pointer-events-auto sticky top-0 z-50 flex h-[var(--header-height)] items-center justify-between bg-white text-gray-800 shadow-md"
+>
+	<div class="flex items-center space-x-8">
+		<div class="logo">
+			<Icons.user href="/" class="mb-6 h-10 w-auto md:h-10" />
+		</div>
+		{#if userLoggedIn}
+			<DashboardMainNav />
+		{/if}
 	</div>
+	<nav class="flex items-center space-x-4">
+		{#if !userLoggedIn}
+			<Button onclick={toggleCreate} variant="outline">
+				<User class="h-4 w-4" />
+				<span class="ml-2 hidden sm:inline">Login / Sign Up</span>
+			</Button>
+		{:else}
+			<UserNav />
+		{/if}
+		<!-- <DarkMode /> -->
+	</nav>
 </header>
+
+{#if showLoginDialog}
+	<div
+		class="pointer-events-auto fixed left-1/2 top-1/2 z-50 min-w-[300px] -translate-x-1/2 -translate-y-1/2 transform"
+		transition:fade={{ duration: 300 }}
+		use:clickOutside
+	>
+		<LoginSignup bind:showLoginDialog />
+	</div>
+{/if}
